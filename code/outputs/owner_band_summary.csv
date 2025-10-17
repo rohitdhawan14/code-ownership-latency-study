@@ -1,0 +1,6 @@
+﻿Owners per Repo,PRs,Repos,Median First Review (h),Median Merge (h),IQR Merge (h)
+1 Owner,"57,255",139,3 h,48 h,158
+2 Owners,"31,545",73,5 h,62 h,160
+3–6 Owners,"110,926",178,9 h,79 h,267
+7–10 Owners,"71,386",88,7 h,70 h,232
+>10 Owners,"253,860",200,11 h,110 h,340

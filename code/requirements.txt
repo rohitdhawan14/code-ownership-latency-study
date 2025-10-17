@@ -1,0 +1,30 @@
+# Core dependencies
+python>=3.9
+pandas==2.2.2
+numpy==1.26.4
+
+# Data and time handling
+python-dateutil==2.9.0
+pytz==2024.1
+
+# GitHub API access
+requests==2.32.3
+PyGithub==2.3.0
+ratelimit==2.2.1
+
+# Visualization
+matplotlib==3.9.2
+seaborn==0.13.2
+
+# CSV and file handling
+tqdm==4.66.4
+pyarrow==17.0.0
+
+# Statistical validation
+scipy==1.13.1
+
+# Optional (for reproducibility environments)
+jupyterlab==4.2.5
+notebook==7.2.2
+ipykernel==6.29.5
+black==24.8.0
