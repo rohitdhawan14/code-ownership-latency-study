@@ -138,7 +138,7 @@ Aggregate PRs only where ownership existed **before the first review**, grouped 
 The analysis reveals a clear pattern: smaller ownership groups review and merge code significantly faster, while larger groups experience longer delays and higher variability.  
 This figure visualizes how merge latency scales with ownership size across all governed repositories.
 
-![Median Merge Time vs. Number of Owners](fig/merge_time_vs_owners.png)
+![Median Merge Time vs. Number of Owners](figs/merge_time_vs_owners.png)
 
 *Figure: Median merge time (hours) increases as ownership groups expand, reflecting added coordination overhead.*
 
