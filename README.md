@@ -29,8 +29,8 @@ code/
 │   ├── active_repos.csv
 │   ├── active_repos_top2000.csv
 │   ├── codeowners_meta.csv
-│   ├── msr-final-results.csv.zst
-│   ├── owner_band_summary.csv
+│   ├── msr-final-results.csv (Hosted on Zenodo)
+│   ├── owner_band_summary.csv (Hosted on Zenodo)
 └── figs/
     └── merge_time_vs_owners.png
 
@@ -51,7 +51,7 @@ These datasets were generated using the workflow described below and form the ba
 | `active_repos.csv` | `active_repos_pr.sql` | All repositories with ≥ 1 PR event (Jan 2024 – Sep 2025) |
 | `active_repos_top2000.csv` | `active_repos_pr_top_2000.sql` | The 2 000 most active repositories |
 | `codeowners_meta.csv` | `codeowner_scan.py` | CODEOWNERS presence, creation date, and number of owners |
-| `msr-final-results.csv.zst` | `mergelatency_reviewlatency_final.sql` | PR-level dataset (Zstandard compressed) |
+| `msr-final-results.csv` | `mergelatency_reviewlatency_final.sql` | PR-level dataset (GZ - Hosted on Zenodo - Link already provided) |
 | `owner_band_summary.csv` | `owner_band_summary.sql` | Summary of governed PRs grouped by ownership size |
 
 ---
