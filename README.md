@@ -1,5 +1,7 @@
 # CODEOWNERS & Review Accountability (2024–2025)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17375757.svg)](https://doi.org/10.5281/zenodo.17375757)
+
 This repository reproduces the dataset and analyses used to study how **CODEOWNERS governance** affects **pull-request (PR) review latency** and **merge latency** across open-source repositories.  
 The workflow combines **BigQuery SQL queries** with lightweight **Python utilities** for metadata extraction and data validation.
 
@@ -7,6 +9,8 @@ The workflow combines **BigQuery SQL queries** with lightweight **Python utiliti
 > Running the full workflow on the GitHub Archive involves **multi-terabyte scans** and can incur **significant BigQuery costs** depending on your billing configuration.  
 > For experimentation, restrict queries to a smaller date range (for example, a few months) without affecting reproducibility.  
 > Always enable **cost controls or query quotas** before execution.
+
+The full dataset and supporting files are permanently archived on Zenodo ([DOI 10.5281/zenodo.17375757](https://doi.org/10.5281/zenodo.17375757)).
 
 ---
 
@@ -25,9 +29,9 @@ code/
 │   ├── active_repos.csv
 │   ├── active_repos_top2000.csv
 │   ├── codeowners_meta.csv
-│   ├── msr-final-results.csv
+│   ├── msr-final-results.csv.zst
 │   ├── owner_band_summary.csv
-└── fig/
+└── figs/
     └── merge_time_vs_owners.png
 
 Additional Files  
@@ -144,20 +148,36 @@ This figure visualizes how merge latency scales with ownership size across all g
 
 ---
 
-## Workflow Summary
-
-| Step | Purpose | Query / Tool | Output |
-|------|----------|--------------|---------|
-| 1 | Identify active repositories | `active_repos_pr.sql` | `active_repos.csv` |
-| 2 | Select top 2 000 repositories | `active_repos_pr_top_2000.sql` | `active_repos_top2000.csv` |
-| 3 | Scan for CODEOWNERS metadata | `codeowner_scan.py` | `codeowners_meta.csv` |
-| 4 | Upload metadata | BigQuery | Table |
-| 5 | Compute PR latencies | `mergelatency_reviewlatency_final.sql` | `msr-final-results.csv` |
-| 6 | Summarize governed PRs | `owner_band_summary.sql` | `owner_band_summary.csv` |
-
----
-
 ## Reproducibility
 
 All steps are **deterministic** and reproducible using only public GitHub data from the **GitHub Archive**.  
 Generated CSVs are included for verification, secondary analysis, and transparency.
+
+---
+
+## Data Availability
+
+The full dataset supporting this analysis is archived on Zenodo:
+
+📦 **Zenodo DOI:** [10.5281/zenodo.17375757](https://doi.org/10.5281/zenodo.17375757)
+
+**Contents:**
+- `msr-final-results.csv.zst` — Complete PR-level dataset (Zstandard compressed, ~96 MB)
+- `owner_band_summary.csv` — Aggregated metrics grouped by ownership band
+- `README.pdf` — Snapshot of this documentation for archival reference
+
+For lightweight experimentation, a smaller 100 K-row representative sample can be found in this repository under `output/msr-final-results-sample.csv.zst`.
+
+All materials are released under a **Creative Commons Attribution 4.0 International (CC BY 4.0)** license.  
+Accompanying SQL queries and scripts are licensed under **MIT** in this GitHub repository.
+
+---
+
+## Citation
+
+If you use this dataset or replicate the analysis, please cite:
+
+> Dhawan, R. (2025). *CODEOWNERS & Review Accountability (2024–2025): Open-source pull request latency dataset.*  
+> Zenodo. [https://doi.org/10.5281/zenodo.17375757](https://doi.org/10.5281/zenodo.17375757)
+
+---
