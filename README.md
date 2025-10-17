@@ -162,7 +162,7 @@ The full dataset supporting this analysis is archived on Zenodo:
 📦 **Zenodo DOI:** [10.5281/zenodo.17375757](https://doi.org/10.5281/zenodo.17375757)
 
 **Contents:**
-- `msr-final-results.csv.zst` — Complete PR-level dataset (Zstandard compressed, ~96 MB)
+- `msr-final-results.csv.gz` — Complete PR-level dataset
 - `owner_band_summary.csv` — Aggregated metrics grouped by ownership band
   
 All materials are released under a **Creative Commons Attribution 4.0 International (CC BY 4.0)** license.  
